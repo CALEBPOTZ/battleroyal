@@ -1,10 +1,4 @@
-/* style.css - Modern & Colourful Redesign */
-
-/* --- Google Fonts --- */
-/* Imported via <link> in index.html: 'Nunito' (sans-serif) and 'Fredoka One' (display) */
-
-/* --- CSS Variables (Theme) --- */
-:root {
+/* style.css - Modern & Colourful Redesign *//* --- Google Fonts --- *//* Imported via <link> in index.html: 'Nunito' (sans-serif) and 'Fredoka One' (display) *//* --- CSS Variables (Theme) --- */:root {
     --font-main: 'Nunito', sans-serif;
     --font-display: 'Fredoka One', cursive;
 
@@ -41,11 +35,7 @@
 
     /* Logo (can be overridden by JS) */
     --logo-url: 'https://via.placeholder.com/50/FFFFFF/000000?text=★';
-}
-
-/* --- Base Styles & Centering --- */
-html { scroll-behavior: smooth; }
-body {
+}/* --- Base Styles & Centering --- */html { scroll-behavior: smooth; }body {
     margin: 0;
     font-family: var(--font-main);
     color: var(--text-color-dark);
@@ -60,220 +50,102 @@ body {
     padding: 20px;
     box-sizing: border-box;
     transition: background 0.5s ease;
-}
-
-/* --- Connection Error Message --- */
-.connection-error {
+}/* --- Connection Error Message --- */.connection-error {
     position: fixed; top: 0; left: 0; width: 100%;
     background-color: var(--error-color); color: white; padding: 10px;
     text-align: center; z-index: 1000; font-weight: bold;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-
-/* --- Main App Container --- */
-.app-container {
+}/* --- Main App Container --- */.app-container {
     background: transparent; padding: 0; border-radius: 0; box-shadow: none;
     width: 100%; max-width: 700px; text-align: center;
-}
-
-/* --- Header --- */
-header {
+}/* --- Header --- */header {
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 30px; padding-bottom: 20px;
-}
-.logo {
+}.logo {
     width: 60px; height: 60px; margin-right: 20px; border-radius: 50%;
     object-fit: cover; background-color: var(--primary-color);
     border: 3px solid white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-#appTitle {
+    transition: src 0.5s ease; /* Add transition for logo source change */
+}#appTitle {
     font-family: var(--font-display);
     background: linear-gradient(45deg, var(--primary-color), var(--accent-color-1));
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent; color: var(--primary-color);
     margin: 0; font-size: 3em; font-weight: 400;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-}
-
-/* --- Card Styling (for sections) --- */
-.card {
+}/* --- Card Styling (for sections) --- */.card {
     background-color: var(--card-bg-color);
     backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     border-radius: var(--border-radius); padding: 25px 30px; margin-bottom: 25px;
     box-shadow: var(--card-shadow); text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.3);
-}
-.prompt-container:hover { transform: none; box-shadow: var(--card-shadow); }
-.card:not(.prompt-container):hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); }
-
-
-/* --- Welcome Area & Action Buttons --- */
-.welcome-area { text-align: center; margin-bottom: 20px; }
-.action-buttons {
+}.prompt-container:hover { transform: none; box-shadow: var(--card-shadow); }.card:not(.prompt-container):hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); }/* --- Welcome Area & Action Buttons --- */.welcome-area { text-align: center; margin-bottom: 20px; }.action-buttons {
     margin-top: 10px; display: flex; justify-content: center;
     gap: 15px; flex-wrap: wrap;
-}
-.action-button { /* Base style for most buttons */
+}.action-button { /* Base style for most buttons */
     color: var(--text-color-light); border: none; padding: 10px 20px;
     border-radius: calc(var(--border-radius) / 1.5); font-size: 1em;
     font-family: var(--font-main); font-weight: 700; cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.2s, opacity 0.2s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
     display: inline-block; width: auto; box-shadow: var(--button-shadow); margin-top: 5px;
-}
-.action-button:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18); }
-.action-button:active { transform: translateY(0px) scale(0.98); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); }
-.action-button:disabled { background-color: #bdc3c7; cursor: not-allowed; opacity: 0.7; transform: none; box-shadow: var(--button-shadow); }
-
-/* Specific Action Button Colors / Styles */
-.admin-button { background: var(--admin-color); } /* Admin Settings btn */
-.admin-button:hover { background: #27ae60; }
-.profile-button { background: var(--profile-color); } /* My Profile & Register btn */
-.profile-button:hover { background: #2980b9; }
-#submitBtn { background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2)); width: 100%; padding: 12px 25px; font-size: 1.1em; } /* Submit Choice button */
-#saveProfileBtn { background: var(--profile-color); width: 100%; padding: 12px 25px; font-size: 1.1em; } /* Save Profile button */
-#saveProfileBtn:hover { background: #2980b9; }
-#saveUsernameBtn { background: var(--profile-color); width: 100%; padding: 12px 25px; font-size: 1.1em; } /* Register button */
-#saveUsernameBtn:hover { background: #2980b9; }
-
-/* Large Copy Button Specific Styles */
-.copy-prompt-button {
-    width: 100%; padding: 15px 30px; font-size: 1.3em;
-    margin-top: 20px; margin-bottom: 10px;
-    background: var(--copy-btn-color);
-}
-.copy-prompt-button:hover { background: #d35400; }
-/* Disabled style for copy button handled by general .action-button:disabled */
-
-
-h2, h3 {
+}.action-button:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18); }.action-button:active { transform: translateY(0px) scale(0.98); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); }/* Specific Action Button Colors / Styles */.admin-button { background: var(--admin-color); } /* For Admin Settings btn */.admin-button:hover { background: #27ae60; }.profile-button { background: var(--profile-color); } /* For My Profile & Register btn */.profile-button:hover { background: #2980b9; }#submitBtn { background: linear-gradient(45deg, var(--accent-color-1), var(--accent-color-2)); width: 100%; padding: 12px 25px; font-size: 1.1em; } /* Submit Choice button */#saveProfileBtn { background: var(--profile-color); width: 100%; padding: 12px 25px; font-size: 1.1em; } /* Save Profile button */#saveProfileBtn:hover { background: #2980b9; }#saveUsernameBtn { background: var(--profile-color); width: 100%; padding: 12px 25px; font-size: 1.1em; } /* Register button */#saveUsernameBtn:hover { background: #2980b9; }/* Appearance Save Button */#saveAppearanceBtn {
+    margin-top: 15px; /* Add some space above the save button */
+    width: 100%; /* Make it full width within its section */
+    padding: 12px 25px;
+    font-size: 1.1em;
+}/* Large Copy Button Specific Styles */.copy-prompt-button {
+    width: 100%; /* Full width */
+    padding: 15px 30px; /* Larger padding */
+    font-size: 1.3em; /* Larger font */
+    margin-top: 20px; /* Space above button */
+    margin-bottom: 10px; /* Space below button */
+    background: var(--copy-btn-color); /* Specific color */
+    /* Inherits .action-button styles for text color, border-radius, shadow, transitions etc. */
+}.copy-prompt-button:hover {
+    background: #d35400; /* Darker orange on hover */
+}.copy-prompt-button:disabled { /* Copied state */
+    background: #bdc3c7;
+    cursor: not-allowed;
+    transform: none; /* Prevent hover/active effect when disabled */
+    box-shadow: var(--button-shadow); /* Keep original shadow */
+}h2, h3 {
     font-family: var(--font-main); font-weight: 700; color: var(--primary-color);
     margin-top: 0; margin-bottom: 20px; text-align: center;
-}
-h2 { font-size: 1.6em; }
-h3 { font-size: 1.3em; }
-
-/* --- Input Fields & Labels --- */
-label {
+}h2 { font-size: 1.6em; }h3 { font-size: 1.3em; }/* --- Input Fields & Labels --- */label {
     display: block; margin-bottom: 8px; font-weight: 700;
     color: var(--secondary-color); font-size: 0.95em;
-}
-input[type="text"], input[type="color"] {
+}input[type="text"], input[type="color"] {
     width: 100%; padding: 12px 15px; margin-bottom: 15px;
     border: 1px solid var(--input-border-color); border-radius: calc(var(--border-radius) / 1.5);
     font-size: 1em; font-family: var(--font-main); box-sizing: border-box;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-input[type="text"]:disabled { background-color: #eee; cursor: not-allowed; opacity: 0.7; }
-input[type="text"]:focus { outline: none; border-color: var(--input-focus-color); box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.2); }
-input[type="color"] { width: 50px; height: 40px; padding: 3px; vertical-align: middle; margin-left: 10px; border: none; border-radius: calc(var(--border-radius) / 2); cursor: pointer; }
-
-/* --- Results Table --- */
-#resultsTable {
+}input[type="text"]:disabled { background-color: #eee; cursor: not-allowed; opacity: 0.7; }input[type="text"]:focus { outline: none; border-color: var(--input-focus-color); box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.2); }input[type="color"] { width: 50px; height: 40px; padding: 3px; vertical-align: middle; margin-left: 10px; border: none; border-radius: calc(var(--border-radius) / 2); cursor: pointer; }/* --- Results Table --- */#resultsTable {
     width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 15px;
     border: 1px solid var(--input-border-color); border-radius: calc(var(--border-radius) / 1.5);
     overflow: hidden; background-color: rgba(255, 255, 255, 0.6);
-    table-layout: fixed; /* Help with column sizing and wrapping */
-}
-#resultsTable th, #resultsTable td {
+}#resultsTable th, #resultsTable td {
     padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--input-border-color);
     vertical-align: middle;
-}
-/* Column Widths (Adjust as needed) */
-#resultsTable th:nth-child(1), #resultsTable td:nth-child(1) { width: 55px; } /* PFP Col */
-#resultsTable th:nth-child(2), #resultsTable td:nth-child(2) { width: 35%; } /* User Col */
-#resultsTable th:nth-child(3), #resultsTable td:nth-child(3) { width: auto; } /* Character Col (takes remaining) */
-
-/* Character Name Wrapping */
-#resultsTable td:nth-child(3) {
-    word-break: break-word; /* Preferred wrapping */
-    /* word-wrap: break-word; */ /* Older browsers */
-    white-space: normal; /* Allow wrapping */
-    line-height: 1.3; /* Adjust line height for wrapped text */
-}
-
-.pfp-col { padding: 5px !important; }
-.pfp-col img {
+}.pfp-col { width: 45px; padding: 5px !important; }.pfp-col img {
     width: 35px; height: 35px; border-radius: 50%; object-fit: cover;
     display: block; margin: 0 auto; border: 1px solid var(--input-border-color);
     background-color: #eee;
-}
-#resultsTable th {
+}#resultsTable th {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     color: var(--text-color-light); font-weight: 700; font-size: 1.05em;
     border-bottom-width: 2px;
-}
-#resultsTable th:first-child, #resultsTable td:first-child { border-right: 1px solid var(--input-border-color); }
-#resultsTable th:last-child, #resultsTable td:last-child { border-right: none; }
-
-#resultsTable tbody tr { transition: background-color 0.2s ease; }
-#resultsTable tbody tr:last-child td { border-bottom: none; }
-#resultsTable tbody tr:nth-child(even) { background-color: rgba(230, 230, 250, 0.3); }
-#resultsTable tbody tr:hover { background-color: rgba(37, 117, 252, 0.1); }
-.admin-crown { color: #f1c40f; margin-left: 5px; font-size: 0.9em; cursor: default; vertical-align: middle; }
-.info-note { font-size: 0.85em; color: #7f8c8d; margin: -10px 0 15px 0; text-align: center; }
-
-
-/* --- Settings Sections Common Styles --- */
-.admin-settings-section, .profile-settings-section { animation: fadeIn 0.5s ease forwards; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-.settings-subsection { margin-top: 30px; padding-top: 20px; border-top: 1px dashed var(--primary-color); }
-.settings-subsection:first-child { margin-top: 0; padding-top: 0; border-top: none; }
-.settings-subsection h3 { margin-bottom: 25px; color: var(--secondary-color); }
-
-/* Profile/Customize Option Layout */
-.profile-option, .customize-option { display: flex; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px; }
-.profile-option label, .customize-option label { margin-bottom: 0; flex-basis: 160px; text-align: left; flex-grow: 0; flex-shrink: 0; color: var(--primary-color); }
-.profile-option input, .customize-option input { margin-bottom: 0; flex-grow: 1; }
-.profile-option input[type="color"], .customize-option input[type="color"] { flex-grow: 0; max-width: 50px; }
-.pfp-preview-container { align-items: center; }
-.pfp-preview { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-left: 15px; border: 2px solid var(--input-border-color); background-color: #eee; }
-.pfp-selection { flex-direction: column; align-items: flex-start; }
-.pfp-choice-method { margin-bottom: 10px; margin-left: 170px; }
-.pfp-choice-method label { display: inline-block; margin-right: 15px; font-weight: normal; color: var(--text-color-dark); flex-basis: auto; }
-.pfp-choice-method input[type="radio"] { margin-right: 5px; width: auto; flex-grow: 0;}
-.pfp-preset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); gap: 10px; margin-bottom: 15px; width: 100%; padding-left: 170px; box-sizing: border-box; }
-.pfp-preset-grid img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; cursor: pointer; border: 3px solid transparent; transition: border-color 0.2s ease, transform 0.2s ease; background-color: #eee; }
-.pfp-preset-grid img.selected { border-color: var(--secondary-color); transform: scale(1.1); }
-.pfp-preset-grid img:hover { transform: scale(1.1); }
-.pfp-custom-url { margin-top: 0; }
-.pfp-custom-url label { margin-bottom: 8px; }
-
-
-/* --- Admin User Management List --- */
-#adminUserListContainer {
+}/* Adjust first/last column borders */#resultsTable th:first-child, #resultsTable td:first-child { border-right: 1px solid var(--input-border-color); }#resultsTable th:last-child, #resultsTable td:last-child { border-right: none; } /* Last col has no right border */#resultsTable tbody tr { transition: background-color 0.2s ease; }#resultsTable tbody tr:last-child td { border-bottom: none; }#resultsTable tbody tr:nth-child(even) { background-color: rgba(230, 230, 250, 0.3); }#resultsTable tbody tr:hover { background-color: rgba(37, 117, 252, 0.1); }.admin-crown { color: #f1c40f; margin-left: 5px; font-size: 0.9em; cursor: default; vertical-align: middle; }.info-note { font-size: 0.85em; color: #7f8c8d; margin: -10px 0 15px 0; text-align: center; }/* --- Settings Sections Common Styles --- */.admin-settings-section, .profile-settings-section { animation: fadeIn 0.5s ease forwards; }@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }.settings-subsection {
+    margin-top: 30px; padding-top: 20px;
+    border-top: 1px dashed var(--primary-color);
+}.settings-subsection:first-child { margin-top: 0; padding-top: 0; border-top: none; }.settings-subsection h3 { margin-bottom: 25px; color: var(--secondary-color); }/* Profile/Customize Option Layout */.profile-option, .customize-option { display: flex; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px; }.profile-option label, .customize-option label { margin-bottom: 0; flex-basis: 160px; text-align: left; flex-grow: 0; flex-shrink: 0; color: var(--primary-color); }.profile-option input, .customize-option input { margin-bottom: 0; flex-grow: 1; }.profile-option input[type="color"], .customize-option input[type="color"] { flex-grow: 0; max-width: 50px; }.pfp-preview-container { align-items: center; }.pfp-preview { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-left: 15px; border: 2px solid var(--input-border-color); background-color: #eee; }.pfp-selection { flex-direction: column; align-items: flex-start; }.pfp-choice-method { margin-bottom: 10px; margin-left: 170px; }.pfp-choice-method label { display: inline-block; margin-right: 15px; font-weight: normal; color: var(--text-color-dark); flex-basis: auto; }.pfp-choice-method input[type="radio"] { margin-right: 5px; width: auto; flex-grow: 0;}.pfp-preset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); gap: 10px; margin-bottom: 15px; width: 100%; padding-left: 170px; box-sizing: border-box; }.pfp-preset-grid img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; cursor: pointer; border: 3px solid transparent; transition: border-color 0.2s ease, transform 0.2s ease; background-color: #eee; }.pfp-preset-grid img.selected { border-color: var(--secondary-color); transform: scale(1.1); }.pfp-preset-grid img:hover { transform: scale(1.1); }.pfp-custom-url { margin-top: 0; }.pfp-custom-url label { margin-bottom: 8px; }/* --- Admin User Management List --- */#adminUserListContainer {
     max-height: 400px; overflow-y: auto; border: 1px solid var(--input-border-color);
     border-radius: calc(var(--border-radius) / 2); padding: 10px;
     background-color: rgba(255, 255, 255, 0.5);
-}
-.admin-user-item { display: flex; align-items: center; justify-content: space-between; padding: 8px 5px; border-bottom: 1px solid #eee; gap: 10px; }
-.admin-user-item:last-child { border-bottom: none; }
-.admin-user-info { display: flex; align-items: center; gap: 10px; flex-grow: 1; overflow: hidden; /* Prevent long names pushing buttons out */ }
-.admin-user-info img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
-.admin-user-info span { font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; /* Handle long usernames in admin list */ }
-.admin-user-actions { display: flex; gap: 8px; flex-shrink: 0; }
-.admin-user-actions button { padding: 3px 7px; font-size: 0.75em; border-radius: 4px; cursor: pointer; border: none; color: white; font-weight: bold; transition: opacity 0.2s ease; }
-.admin-user-actions button:hover { opacity: 0.8; }
-.admin-make-admin-btn { background-color: var(--admin-make-admin-color); }
-.admin-remove-user-btn { background-color: var(--admin-remove-user-color); }
-.admin-user-actions button:disabled { background-color: #bdc3c7; cursor: not-allowed; opacity: 0.7; }
-
-
-/* --- Status & Error Messages --- */
-.error-message, .status-message {
+}.admin-user-item { display: flex; align-items: center; justify-content: space-between; padding: 8px 5px; border-bottom: 1px solid #eee; gap: 10px; }.admin-user-item:last-child { border-bottom: none; }.admin-user-info { display: flex; align-items: center; gap: 10px; flex-grow: 1; }.admin-user-info img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }.admin-user-info span { font-weight: bold; }.admin-user-actions { display: flex; gap: 8px; flex-shrink: 0; }.admin-user-actions button { padding: 3px 7px; font-size: 0.75em; border-radius: 4px; cursor: pointer; border: none; color: white; font-weight: bold; transition: opacity 0.2s ease; }.admin-user-actions button:hover { opacity: 0.8; }.admin-make-admin-btn { background-color: var(--admin-make-admin-color); }.admin-remove-user-btn { background-color: var(--admin-remove-user-color); }.admin-user-actions button:disabled { background-color: #bdc3c7; cursor: not-allowed; opacity: 0.7; }/* --- Status & Error Messages --- */.error-message, .status-message {
     font-size: 0.9em; font-weight: bold; margin-top: 15px;
     padding: 10px 15px; border-radius: 5px; text-align: center;
-}
-.error-message { color: var(--error-color); background-color: rgba(231, 76, 60, 0.1); }
-.status-message.success { color: var(--success-color); background-color: rgba(46, 204, 113, 0.1); }
-.status-message.error { color: var(--error-color); background-color: rgba(231, 76, 60, 0.1); }
-
-/* --- Utility Classes --- */
-.hidden { display: none !important; }
-
-/* --- Responsive Adjustments --- */
-@media (max-width: 600px) {
+}.error-message { color: var(--error-color); background-color: rgba(231, 76, 60, 0.1); }.status-message.success { color: var(--success-color); background-color: rgba(46, 204, 113, 0.1); }.status-message.error { color: var(--error-color); background-color: rgba(231, 76, 60, 0.1); }/* --- Utility Classes --- */.hidden { display: none !important; }/* --- Responsive Adjustments --- */@media (max-width: 600px) {
     body { align-items: flex-start; padding-top: 50px; }
     .app-container { padding: 10px; max-width: 100%; }
     #appTitle { font-size: 2.0em; }
@@ -285,10 +157,13 @@ input[type="color"] { width: 50px; height: 40px; padding: 3px; vertical-align: m
     .pfp-preset-grid { gap: 8px; }
     .pfp-preset-grid img { width: 45px; height: 45px;}
     .action-buttons { flex-direction: column; gap: 10px; }
-    .action-buttons .profile-button, .action-buttons .admin-button { width: auto; }
-    #submitBtn, #saveProfileBtn, #saveUsernameBtn, .copy-prompt-button { width: 100%; }
-    #resultsTable { font-size: 0.9em; table-layout: auto; /* Allow table to adjust more freely */ } /* Revert table-layout on mobile */
+     /* Make only specific action buttons full width on mobile */
+    .action-buttons .profile-button, .action-buttons .admin-button { width: auto; } /* Keep top buttons auto width */
+    #submitBtn, #saveProfileBtn, #saveUsernameBtn, #saveAppearanceBtn, .copy-prompt-button { width: 100%; } /* Make form/large buttons full width */
+
+    #resultsTable { font-size: 0.9em; }
     #resultsTable th, #resultsTable td { padding: 8px 6px; font-size: 0.9em; }
+    /* Remove admin action col styles as they are no longer in table */
     .admin-user-item { flex-direction: column; align-items: flex-start; }
     .admin-user-actions { margin-top: 5px; }
     #adminUserListContainer { padding: 5px;}
