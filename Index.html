@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starlight Glimmer Battle Royal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="connectionErrorMsg" class="connection-error hidden"></div>
+
+    <div class="app-container">
+        <header>
+            <img id="appLogo" src="https://via.placeholder.com/50/FFFFFF/000000?text=★" alt="App Logo" class="logo">
+            <h1 id="appTitle">Starlight Glimmer Battle Royal</h1>
+        </header>
+
+        <div id="usernamePrompt" class="prompt-container card">
+            <h2>Enter Your Username:</h2>
+            <input type="text" id="usernameInput" placeholder="Your Name">
+            <button id="saveUsernameBtn" class="action-button profile-button">Register & Enter!</button>
+            <p id="registrationError" class="error-message hidden"></p>
+        </div>
+
+        <main id="mainContent" class="hidden">
+            <div class="welcome-area">
+                <h2 id="welcomeMessage">Welcome!</h2>
+                <div class="action-buttons">
+                     <button id="profileSettingsToggle" class="action-button profile-button">My Profile</button>
+                     <button id="adminSettingsBtn" class="action-button admin-button hidden">Admin Settings</button>
+                     </div>
+            </div>
+
+            <div id="profileSettingsSection" class="profile-settings-section card hidden">
+                <h3>My Profile</h3>
+                 <div class="profile-option">
+                    <label for="profileUsername">Username:</label>
+                    <input type="text" id="profileUsername" placeholder="Your new username" disabled>
+                </div>
+                 <p class="info-note">Username changes are temporarily disabled.</p>
+
+                <div class="profile-option pfp-selection">
+                     <label>Profile Picture:</label>
+                     <div class="pfp-choice-method">
+                          <input type="radio" id="pfpPresetChoice" name="pfpChoice" value="preset" checked>
+                          <label for="pfpPresetChoice">Preset</label>
+                          <input type="radio" id="pfpCustomChoice" name="pfpChoice" value="custom">
+                          <label for="pfpCustomChoice">Custom URL</label>
+                     </div>
+                </div>
+                <div id="pfpPresetContainer" class="pfp-preset-grid"></div>
+                <div id="pfpCustomUrlContainer" class="profile-option pfp-custom-url hidden">
+                     <label for="profilePfpUrl">Custom URL:</label>
+                     <input type="text" id="profilePfpUrl" placeholder="http://image.url/pic.jpg">
+                </div>
+                <div class="profile-option pfp-preview-container">
+                    <label>Preview:</label>
+                    <img id="profilePfpPreview" class="pfp-preview" src="" alt="PFP Preview">
+                </div>
+                <button id="saveProfileBtn" class="action-button">Save Profile</button>
+                <p id="profileUpdateStatus" class="status-message hidden"></p>
+            </div>
+
+            <div class="input-section card">
+                <label for="characterName">Enter Your Character:</label>
+                <input type="text" id="characterName" placeholder="e.g., Sparklehoof">
+                <button id="submitBtn" class="action-button">Submit Choice</button>
+                 <p id="choiceError" class="error-message hidden"></p>
+            </div>
+
+            <div class="results-section card">
+                <h2>Current Challengers:</h2>
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th class="pfp-col"></th>
+                            <th>User</th>
+                            <th>Character Choice</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+
+            <div id="adminSettingsSection" class="admin-settings-section card hidden">
+                <h2>Admin Settings</h2>
+                <div class="settings-subsection">
+                    <h3>Appearance</h3>
+                    <div class="customize-option">
+                        <label for="bgColor">Background Color:</label>
+                        <input type="color" id="bgColor" value="#8BC6EC">
+                    </div>
+                    <div class="customize-option">
+                         <label for="bgImage">Background Image URL:</label>
+                         <input type="text" id="bgImage" placeholder="Enter image URL (optional)">
+                    </div>
+                     <div class="customize-option">
+                         <label for="logoUrl">Logo Image URL:</label>
+                         <input type="text" id="logoUrl" placeholder="Enter logo URL (optional)">
+                    </div>
+                </div>
+                <div class="settings-subsection">
+                     <h3>User Management</h3>
+                     <p id="adminUserMgmtStatus" class="status-message hidden"></p>
+                     <div id="adminUserListContainer"></div>
+                </div>
+            </div>
+
+             <button id="copyVsBtn" class="action-button admin-button copy-prompt-button hidden">Copy Battle Prompt</button>
+
+        </main> </div> <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
