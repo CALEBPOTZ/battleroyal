@@ -31,7 +31,7 @@
                 <div class="action-buttons">
                      <button id="profileSettingsToggle" class="action-button profile-button">My Profile</button>
                      <button id="adminSettingsBtn" class="action-button admin-button hidden">Admin Settings</button>
-                     </div>
+                </div>
             </div>
 
             <div id="profileSettingsSection" class="profile-settings-section card hidden">
@@ -66,7 +66,7 @@
 
             <div class="input-section card">
                 <label for="characterName">Enter Your Character:</label>
-                <input type="text" id="characterName" placeholder="e.g., Sparklehoof">
+                <input type="text" id="characterName" placeholder="e.g., Sparklehoof" maxlength="100">
                 <button id="submitBtn" class="action-button">Submit Choice</button>
                  <p id="choiceError" class="error-message hidden"></p>
             </div>
@@ -90,6 +90,7 @@
                 <h2>Admin Settings</h2>
                 <div class="settings-subsection">
                     <h3>Appearance</h3>
+                    <p class="info-note">Changes apply instantly for your view only and are not saved.</p>
                     <div class="customize-option">
                         <label for="bgColor">Background Color:</label>
                         <input type="color" id="bgColor" value="#8BC6EC">
