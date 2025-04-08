@@ -12,7 +12,7 @@ const PRESET_PFPS = [
 ];
 const DEFAULT_BG_COLOR = '#8BC6EC';
 const DEFAULT_BG_GRADIENT = 'linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%)';
-const DEFAULT_LOGO = 'https://via.placeholder.com/50/FFFFFF/000000?text=★';
+const DEFAULT_LOGO = 'https://via.placeholder.com/50/https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b3cddf0a-fca2-41b1-a8b6-d39f94540e70/dfbnrtm-ac0e232a-c7d5-4f38-8bc7-f571405b7dd8.png/v1/fill/w_984,h_812/starlight_glimmer_going_down_with_the_guns_by_shadowxcode_dfbnrtm-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA1NyIsInBhdGgiOiJcL2ZcL2IzY2RkZjBhLWZjYTItNDFiMS1hOGI2LWQzOWY5NDU0MGU3MFwvZGZibnJ0bS1hYzBlMjMyYS1jN2Q1LTRmMzgtOGJjNy1mNTcxNDA1YjdkZDgucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.9afW-_WqRdg6wGLiJY4gabup2QpYgRQDz5-LO_IgHDc/000000?text=★';
 
 // --- DOM Elements ---
 const connectionErrorMsg = document.getElementById('connectionErrorMsg');
